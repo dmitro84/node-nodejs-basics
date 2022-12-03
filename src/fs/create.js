@@ -1,11 +1,10 @@
-import { dirname, join } from 'path'
-import { fileURLToPath } from 'url'
+import { join } from 'path'
+import  {__dirname}  from '../utils.js'
 import { createWriteStream, existsSync } from 'fs'
 
 const create = async () => {
-  const __dirname = dirname(fileURLToPath(import.meta.url))
-
-  const file = join(__dirname, './files/fresh.txt')
+   
+  const file = join(__dirname, 'fs/files/fresh.txt')
   const data = 'I am fresh and young'
   if (existsSync(file)) {
     throw new Error('FS operation failed')
